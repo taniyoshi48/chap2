@@ -4,7 +4,7 @@
  */
 
 require('date-utils');
-require('fs');
+var fs =  require('fs');
 
 
 var api_impl = {
