@@ -5,7 +5,7 @@
 var url = require("url");
 
 var authentication = require("./authentication.js");
-var scraping = require("./scraping.js");
+//var scraping = require("./scraping.js");
 
 var HEADER_JSON = {
     "Access-Control-Allow-Origin" : "*", // JSONはクロスドメインがデフォルトNG。
@@ -62,7 +62,7 @@ console.log(queryGetMethod);
             return Promise.resolve( result );
         }else if( pathname == "/api/v1/show/event" ){
             // スクレイピングAPI
-            return scraping.getEventFromTwitter();
+            //return scraping.getEventFromTwitter();
         }else{
             // サポート外のAPI
             result.httpStatus = 404;
