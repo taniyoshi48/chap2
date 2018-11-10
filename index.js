@@ -1,6 +1,6 @@
 var http = require("http");
 
-var api = require("./src/api.js");
+
 
 var server = http.createServer(function(request, response) {
 
