@@ -4,13 +4,11 @@
  */
 
 require('date-utils');
-var fs =  require('fs');
-//var cheerioHttp = require('cheerio-httpcli');
-//var cheerio = require('cheerio');
 
 var api_impl = {
-    
-
+    "fs" : require('fs'),
+    "cheerioHttp" : require('cheerio-httpcli'),
+    "cheerio" : require('cheerio')
 };
 exports.api_impl = api_impl;
 
@@ -22,7 +20,7 @@ SEARCH_KEYWORD = SEARCH_KEYWORD.replace(/#/, '%23');
 
 var isCacheUse = function () {
     return new Promise(function (resolve,reject) {
-        api_impl.fs.stat("./data/cache.html", function (err,stats) {
+        api_impl.fs.stat(CACHE_PATH, function (err,stats) {
             var last_changed_time, limit_date = new Date();
             if(err){
                 reject(err);
@@ -84,7 +82,7 @@ var fetchAndWriteCacheOnCherrioHttpCli = function () {
 	
 				// HTMLとして、cheerio互換のノードをキャッシュファイルに保存する。
                 var $ = cheerioResult.$;
-                api_impl.fs.writeFile("./data/cache.html", $.html(), "utf-8", function(err){
+                api_impl.fs.writeFile(CACHE_PATH, $.html(), "utf-8", function(err){
                     if(err){
                         reject(err);
                     }else{
@@ -111,7 +109,7 @@ api_impl.fetchAndWriteCacheOnCherrioHttpCli = fetchAndWriteCacheOnCherrioHttpCli
 
 var readCacheHtmlAndParseToEventArray = function () {
     var promise = new Promise((resolve,reject)=>{
-        api_impl.fs.readFile( "./data/cache.html", "utf-8", function (err, data) {
+        api_impl.fs.readFile( CACHE_PATH, "utf-8", function (err, data) {
             if(err){
                 reject(err);
             }else{
