@@ -1,6 +1,5 @@
 var http = require("http");
 
-var router = require("./src/router_static.js");
 var api = require("./src/api.js");
 
 var server = http.createServer(function(request, response) {
