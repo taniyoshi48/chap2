@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "cheerio-httpcli": "^0.7.2",
+    "cheerio-httpcli": "*",
     "date-utils": "^1.2.21"
   }
 }

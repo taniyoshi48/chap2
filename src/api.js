@@ -2,7 +2,7 @@
  * [api.js]
  */
 
-var url = require("url")
+var url = require("url");
 
 var authentication = require("./authentication.js");
 var scraping = require("./scraping.js");
