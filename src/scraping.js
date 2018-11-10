@@ -5,7 +5,7 @@
 
 require('date-utils');
 var fs =  require('fs');
-var cheerioHttp = require('cheerio-httpcli');
+//var cheerioHttp = require('cheerio-httpcli');
 //var cheerio = require('cheerio');
 
 var api_impl = {
