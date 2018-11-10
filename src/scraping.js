@@ -14,11 +14,3 @@ var api_impl = {
 };
 exports.api_impl = api_impl;
 
-
-
-var EVENTE_TITLE = process.env.SEARCH_KEYWORD || "#3good";
-var SEARCH_KEYWORD = EVENTE_TITLE;
-SEARCH_KEYWORD = SEARCH_KEYWORD.replace(/#/, '%23');
-
-
-
