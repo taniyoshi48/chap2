@@ -2,13 +2,13 @@
   "name": "fluorite-scraping",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "node_modules\\.bin\\mocha --recursive",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "author": "Hoshimado",
   "license": "MIT",
